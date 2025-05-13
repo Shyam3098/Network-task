@@ -1,0 +1,561 @@
+Asus@shyam MINGW64 ~ (master)
+$ cd Downloads/
+
+Asus@shyam MINGW64 ~/Downloads (master)
+$ ssh -i /c/Users/Asus/Downloads/mykeypairtask1.pem ubuntu@13.232.37.25
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1024-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue May 13 13:08:28 UTC 2025
+
+  System load:  0.0               Processes:             111
+  Usage of /:   30.7% of 6.71GB   Users logged in:       1
+  Memory usage: 22%               IPv4 address for enX0: 172.31.6.96
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+82 updates can be applied immediately.
+44 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Tue May 13 12:47:35 2025 from 5.151.134.149
+ubuntu@ip-172-31-6-96:~$ dig guvi.in +short
+104.26.4.88
+172.67.70.207
+104.26.5.88
+ubuntu@ip-172-31-6-96:~$ ping -c 1 guvi.in
+PING guvi.in (104.26.4.88) 56(84) bytes of data.
+64 bytes from 104.26.4.88: icmp_seq=1 ttl=54 time=1.31 ms
+
+--- guvi.in ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.312/1.312/1.312/0.000 ms
+ubuntu@ip-172-31-6-96:~$ top                 # Live CPU/memory view (press q to exit)
+free -m             # Memory usage in MB
+uptime              # System load average
+top - 13:16:09 up  1:00,  3 users,  load average: 0.00, 0.00, 0.00
+Tasks: 108 total,   1 running, 107 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 69.9 id,  0.0 wa,  0.0 hi,  0.0 si, 29.8 st
+MiB Mem :    957.4 total,    219.6 free,    322.2 used,    573.5 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    635.2 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    624 _chrony   20   0   19400   3728   3072 S   0.3   0.4   0:00.13 chronyd
+      1 root      20   0   22492  13640   9544 S   0.0   1.4   0:01.62 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_g
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_p
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+     12 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_pe
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
+     15 root      20   0       0      0      0 S   0.0   0.0   0:00.08 ksoftirqd/0
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.17 rcu_sched
+     17 root      rt   0       0      0      0 S   0.0   0.0   0:00.01 migration/0
+     18 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     21 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_
+     22 root      20   0       0      0      0 I   0.0   0.0   0:00.11 kworker/u30:1-events_unbound
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 khungtaskd
+     25 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     27 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-write
+     28 root      20   0       0      0      0 S   0.0   0.0   0:00.11 kcompactd0
+     29 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd
+     30 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kinte
+     32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kbloc
+     33 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-blkcg
+     34 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/9-acpi
+     35 root      20   0       0      0      0 S   0.0   0.0   0:00.00 xen-balloon
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-tpm_d
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ata_s
+     38 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md
+     39 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md_bi
+     40 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-edac-
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-devfr
+     42 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 watchdogd
+     43 root       0 -20       0      0      0 I   0.0   0.0   0:00.10 kworker/0:1H-kblockd
+     44 root      20   0       0      0      0 S   0.0   0.0   0:00.07 kswapd0
+     45 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ecryptfs-kthread
+               total        used        free      shared  buff/cache   available
+Mem:             957         322         219           0         573         635
+Swap:              0           0           0
+ 13:16:09 up  1:00,  3 users,  load average: 0.00, 0.00, 0.00
+ubuntu@ip-172-31-6-96:~$ ping -c 4 guvi.in                   # Test connectivity to guvi.in
+sudo apt install traceroute -y     # Install traceroute if not already
+traceroute guvi.in                 # Trace the route to guvi.in
+PING guvi.in (172.67.70.207) 56(84) bytes of data.
+64 bytes from 172.67.70.207: icmp_seq=1 ttl=54 time=1.14 ms
+64 bytes from 172.67.70.207: icmp_seq=2 ttl=54 time=1.31 ms
+64 bytes from 172.67.70.207: icmp_seq=3 ttl=54 time=1.24 ms
+64 bytes from 172.67.70.207: icmp_seq=4 ttl=54 time=1.51 ms
+
+--- guvi.in ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 1.142/1.300/1.511/0.135 ms
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  traceroute
+0 upgraded, 1 newly installed, 0 to remove and 82 not upgraded.
+Need to get 60.5 kB of archives.
+After this operation, 162 kB of additional disk space will be used.
+Get:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 traceroute amd64 1:2.1.5-1 [60.5 kB]
+Fetched 60.5 kB in 0s (4021 kB/s)
+Selecting previously unselected package traceroute.
+(Reading database ... 70564 files and directories currently installed.)
+Preparing to unpack .../traceroute_1%3a2.1.5-1_amd64.deb ...
+Unpacking traceroute (1:2.1.5-1) ...
+Setting up traceroute (1:2.1.5-1) ...
+update-alternatives: using /usr/bin/traceroute.db to provide /usr/bin/traceroute (traceroute) in auto mode
+update-alternatives: using /usr/bin/traceroute6.db to provide /usr/bin/traceroute6 (traceroute6) in auto mode
+update-alternatives: using /usr/bin/lft.db to provide /usr/bin/lft (lft) in auto mode
+update-alternatives: using /usr/bin/traceproto.db to provide /usr/bin/traceproto (traceproto) in auto mode
+update-alternatives: using /usr/sbin/tcptraceroute.db to provide /usr/sbin/tcptraceroute (tcptraceroute) in auto mode
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+traceroute to guvi.in (104.26.4.88), 30 hops max, 60 byte packets
+ 1  240.3.120.14 (240.3.120.14)  1.059 ms  1.061 ms 240.3.120.13 (240.3.120.13)  1.025 ms
+ 2  162.158.226.5 (162.158.226.5)  0.984 ms 99.83.89.196 (99.83.89.196)  0.970 ms  0.948 ms
+ 3  * 99.83.89.197 (99.83.89.197)  1.847 ms *
+ 4  162.158.226.89 (162.158.226.89)  0.904 ms 162.158.226.87 (162.158.226.87)  0.890 ms 162.158.226.67 (162.158.226.67)  0.855 ms
+ 5  104.26.4.88 (104.26.4.88)  0.839 ms  0.841 ms  0.819 ms
+ubuntu@ip-172-31-6-96:~$
+ubuntu@ip-172-31-6-96:~$
+ping <private-ip-of-other-ec2>
+-bash: syntax error near unexpected token `newline'
+ubuntu@ip-172-31-6-96:~$ ^C
+ubuntu@ip-172-31-6-96:~$ ping -c 4 172.31.22.45
+PING 172.31.22.45 (172.31.22.45) 56(84) bytes of data.
+
+--- 172.31.22.45 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3055ms
+
+ubuntu@ip-172-31-6-96:~$ ping -c 4 172.31.6.96
+PING 172.31.6.96 (172.31.6.96) 56(84) bytes of data.
+64 bytes from 172.31.6.96: icmp_seq=1 ttl=64 time=0.014 ms
+64 bytes from 172.31.6.96: icmp_seq=2 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=3 ttl=64 time=0.030 ms
+64 bytes from 172.31.6.96: icmp_seq=4 ttl=64 time=0.032 ms
+
+--- 172.31.6.96 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3101ms
+rtt min/avg/max/mdev = 0.014/0.025/0.032/0.007 ms
+ubuntu@ip-172-31-6-96:~$ sudo netstat -tuln | grep 9000
+sudo: netstat: command not found
+ubuntu@ip-172-31-6-96:~$ sudo apt update && sudo apt install net-tools -y
+Hit:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [822 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [153 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [838 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [183 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Fetched 2195 kB in 11s (207 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 83 not upgraded.
+Need to get 204 kB of archives.
+After this operation, 811 kB of additional disk space will be used.
+Get:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 net-tools amd64 2.10-0.1ubuntu4 [204 kB]
+Fetched 204 kB in 0s (10.6 MB/s)
+Selecting previously unselected package net-tools.
+(Reading database ... 70584 files and directories currently installed.)
+Preparing to unpack .../net-tools_2.10-0.1ubuntu4_amd64.deb ...
+Unpacking net-tools (2.10-0.1ubuntu4) ...
+Setting up net-tools (2.10-0.1ubuntu4) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-6-96:~$ sudo netstat -tuln | grep 9000
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+
+^C
+ubuntu@ip-172-31-6-96:~$ sudo apt install netcat -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package netcat is a virtual package provided by:
+  netcat-traditional 1.10-48
+  netcat-openbsd 1.226-1ubuntu2
+You should explicitly select one to install.
+
+E: Package 'netcat' has no installation candidate
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+^C
+ubuntu@ip-172-31-6-96:~$ ubuntu@ip-172-31-6-96:~$ sudo apt install netcat -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package netcat is a virtual package provided by:
+  netcat-traditional 1.10-48
+  netcat-openbsd 1.226-1ubuntu2
+You should explicitly select one to install.
+
+E: Package 'netcat' has no installation candidate
+^C
+ubuntu@ip-172-31-6-96:~$
+^C
+ubuntu@ip-172-31-6-96:~$ sudo apt install netcat-openbsd -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+netcat-openbsd is already the newest version (1.226-1ubuntu2).
+netcat-openbsd set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 83 not upgraded.
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+nc: connect to guvi.com (172.67.146.154) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (2606:4700:3031::6815:4fa6) port 9000 (tcp) failed: Network is unreachable
+nc: connect to guvi.com (2606:4700:3037::ac43:929a) port 9000 (tcp) failed: Network is unreachable
+ubuntu@ip-172-31-6-96:~$ ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+nc: connect to guvi.com (172.67.146.154) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (2606:4700:3031::6815:4fa6) port 9000 (tcp) failed: Network is unreachable
+nc: connect to guvi.com (2606:4700:3037::ac43:929a) port 9000 (tcp) failed: Network is unreachable
+^C
+ubuntu@ip-172-31-6-96:~$ ping 172.31.6.96
+PING 172.31.6.96 (172.31.6.96) 56(84) bytes of data.
+64 bytes from 172.31.6.96: icmp_seq=1 ttl=64 time=0.013 ms
+64 bytes from 172.31.6.96: icmp_seq=2 ttl=64 time=0.030 ms
+64 bytes from 172.31.6.96: icmp_seq=3 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=4 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=5 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=6 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=7 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=8 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=9 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=10 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=11 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=12 ttl=64 time=0.032 ms
+64 bytes from 172.31.6.96: icmp_seq=13 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=14 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=15 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=16 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=17 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=18 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=19 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=20 ttl=64 time=0.028 ms
+64 bytes from 172.31.6.96: icmp_seq=21 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=22 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=23 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=24 ttl=64 time=0.029 ms
+64 bytes from 172.31.6.96: icmp_seq=25 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=26 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=27 ttl=64 time=0.028 ms
+64 bytes from 172.31.6.96: icmp_seq=28 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=29 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=30 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=31 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=32 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=33 ttl=64 time=0.023 ms
+64 bytes from 172.31.6.96: icmp_seq=34 ttl=64 time=0.035 ms
+64 bytes from 172.31.6.96: icmp_seq=35 ttl=64 time=0.028 ms
+64 bytes from 172.31.6.96: icmp_seq=36 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=37 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=38 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=39 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=40 ttl=64 time=0.028 ms
+64 bytes from 172.31.6.96: icmp_seq=41 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=42 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=43 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=44 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=45 ttl=64 time=0.030 ms
+64 bytes from 172.31.6.96: icmp_seq=46 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=47 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=48 ttl=64 time=0.030 ms
+64 bytes from 172.31.6.96: icmp_seq=49 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=50 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=51 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=52 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=53 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=54 ttl=64 time=0.033 ms
+64 bytes from 172.31.6.96: icmp_seq=55 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=56 ttl=64 time=0.034 ms
+64 bytes from 172.31.6.96: icmp_seq=57 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=58 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=59 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=60 ttl=64 time=0.024 ms
+64 bytes from 172.31.6.96: icmp_seq=61 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=62 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=63 ttl=64 time=0.033 ms
+64 bytes from 172.31.6.96: icmp_seq=64 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=65 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=66 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=67 ttl=64 time=0.029 ms
+64 bytes from 172.31.6.96: icmp_seq=68 ttl=64 time=0.027 ms
+64 bytes from 172.31.6.96: icmp_seq=69 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=70 ttl=64 time=0.028 ms
+64 bytes from 172.31.6.96: icmp_seq=71 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=72 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=73 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=74 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=75 ttl=64 time=0.034 ms
+64 bytes from 172.31.6.96: icmp_seq=76 ttl=64 time=0.032 ms
+64 bytes from 172.31.6.96: icmp_seq=77 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=78 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=79 ttl=64 time=0.025 ms
+64 bytes from 172.31.6.96: icmp_seq=80 ttl=64 time=0.034 ms
+64 bytes from 172.31.6.96: icmp_seq=81 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=82 ttl=64 time=0.026 ms
+64 bytes from 172.31.6.96: icmp_seq=83 ttl=64 time=0.032 ms
+64 bytes from 172.31.6.96: icmp_seq=84 ttl=64 time=0.026 ms
+^C
+--- 172.31.6.96 ping statistics ---
+84 packets transmitted, 84 received, 0% packet loss, time 85026ms
+rtt min/avg/max/mdev = 0.013/0.026/0.035/0.003 ms
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
+^C
+ubuntu@ip-172-31-6-96:~$ sudo ufw status
+Status: inactive
+ubuntu@ip-172-31-6-96:~$ sudo ufw allow 9000/tcp
+sudo ufw reload
+Rules updated
+Rules updated (v6)
+Firewall not enabled (skipping reload)
+ubuntu@ip-172-31-6-96:~$ your-app-command --host 0.0.0.0 --port 9000
+your-app-command: command not found
+ubuntu@ip-172-31-6-96:~$ tcp   0   0 0.0.0.0:9000   0.0.0.0:*   LISTEN
+Command 'tcp' not found, but there are 30 similar ones.
+ubuntu@ip-172-31-6-96:~$ netstat -tulnp
+(No info could be read for "-p": geteuid()=1000 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -
+udp        0      0 127.0.0.54:53           0.0.0.0:*                           -
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -
+udp        0      0 172.31.6.96:68          0.0.0.0:*                           -
+udp6       0      0 ::1:323                 :::*                                -
+ubuntu@ip-172-31-6-96:~$ sudo apt update && sudo apt install nginx
+Hit:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  nginx-common
+Suggested packages:
+  fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  nginx nginx-common
+0 upgraded, 2 newly installed, 0 to remove and 83 not upgraded.
+Need to get 551 kB of archives.
+After this operation, 1596 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common all 1.24.0-2ubuntu7.3 [31.2 kB]
+Get:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.3 [520 kB]
+Fetched 551 kB in 0s (23.4 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 70632 files and directories currently installed.)
+Preparing to unpack .../nginx-common_1.24.0-2ubuntu7.3_all.deb ...
+Unpacking nginx-common (1.24.0-2ubuntu7.3) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.24.0-2ubuntu7.3_amd64.deb ...
+Unpacking nginx (1.24.0-2ubuntu7.3) ...
+Setting up nginx (1.24.0-2ubuntu7.3) ...
+Warning: The unit file, source configuration file or drop-ins of nginx.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Setting up nginx-common (1.24.0-2ubuntu7.3) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-6-96:~$ netstat -tulnp
+(No info could be read for "-p": geteuid()=1000 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 :::80                   :::*                    LISTEN      -
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -
+udp        0      0 127.0.0.54:53           0.0.0.0:*                           -
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -
+udp        0      0 172.31.6.96:68          0.0.0.0:*                           -
+udp6       0      0 ::1:323                 :::*                                -
+ubuntu@ip-172-31-6-96:~$ sudo netstat -tuln | grep 9000
+ubuntu@ip-172-31-6-96:~$ tcp   0   0 0.0.0.0:9000   0.0.0.0:*   LISTEN
+Command 'tcp' not found, but there are 30 similar ones.
+ubuntu@ip-172-31-6-96:~$ export FLASK_APP=app.py
+flask run --host=0.0.0.0 --port=9000
+Command 'flask' not found, but can be installed with:
+sudo apt install python3-flask
+ubuntu@ip-172-31-6-96:~$ sudo apt install python3-flask
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  javascript-common libjs-jquery python3-asgiref python3-itsdangerous python3-pyasyncore python3-pyinotify python3-simplejson python3-werkzeug
+Suggested packages:
+  python3-dotenv python-flask-doc python-pyinotify-doc ipython3 python-werkzeug-doc python3-lxml python3-watchdog
+The following NEW packages will be installed:
+  javascript-common libjs-jquery python3-asgiref python3-flask python3-itsdangerous python3-pyasyncore python3-pyinotify python3-simplejson python3-werkzeug
+0 upgraded, 9 newly installed, 0 to remove and 83 not upgraded.
+Need to get 716 kB of archives.
+After this operation, 2638 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 javascript-common all 11+nmu1 [5936 B]
+Get:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libjs-jquery all 3.6.1+dfsg+~3.5.14-1 [328 kB]
+Get:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-asgiref all 3.7.2-1 [24.8 kB]
+Get:4 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-itsdangerous all 2.1.2-4 [14.6 kB]
+Get:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-werkzeug all 3.0.1-3ubuntu0.2 [170 kB]
+Get:6 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-flask all 3.0.2-1ubuntu1 [82.9 kB]
+Get:7 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-pyasyncore all 1.0.2-2 [10.1 kB]
+Get:8 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-pyinotify all 0.9.6-2ubuntu1 [25.0 kB]
+Get:9 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 python3-simplejson amd64 3.19.2-1build2 [54.5 kB]
+Fetched 716 kB in 0s (23.1 MB/s)
+Selecting previously unselected package javascript-common.
+(Reading database ... 70680 files and directories currently installed.)
+Preparing to unpack .../0-javascript-common_11+nmu1_all.deb ...
+Unpacking javascript-common (11+nmu1) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../1-libjs-jquery_3.6.1+dfsg+~3.5.14-1_all.deb ...
+Unpacking libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Selecting previously unselected package python3-asgiref.
+Preparing to unpack .../2-python3-asgiref_3.7.2-1_all.deb ...
+Unpacking python3-asgiref (3.7.2-1) ...
+Selecting previously unselected package python3-itsdangerous.
+Preparing to unpack .../3-python3-itsdangerous_2.1.2-4_all.deb ...
+Unpacking python3-itsdangerous (2.1.2-4) ...
+Selecting previously unselected package python3-werkzeug.
+Preparing to unpack .../4-python3-werkzeug_3.0.1-3ubuntu0.2_all.deb ...
+Unpacking python3-werkzeug (3.0.1-3ubuntu0.2) ...
+Selecting previously unselected package python3-flask.
+Preparing to unpack .../5-python3-flask_3.0.2-1ubuntu1_all.deb ...
+Unpacking python3-flask (3.0.2-1ubuntu1) ...
+Selecting previously unselected package python3-pyasyncore.
+Preparing to unpack .../6-python3-pyasyncore_1.0.2-2_all.deb ...
+Unpacking python3-pyasyncore (1.0.2-2) ...
+Selecting previously unselected package python3-pyinotify.
+Preparing to unpack .../7-python3-pyinotify_0.9.6-2ubuntu1_all.deb ...
+Unpacking python3-pyinotify (0.9.6-2ubuntu1) ...
+Selecting previously unselected package python3-simplejson.
+Preparing to unpack .../8-python3-simplejson_3.19.2-1build2_amd64.deb ...
+Unpacking python3-simplejson (3.19.2-1build2) ...
+Setting up javascript-common (11+nmu1) ...
+Setting up python3-itsdangerous (2.1.2-4) ...
+Setting up python3-simplejson (3.19.2-1build2) ...
+Setting up python3-pyasyncore (1.0.2-2) ...
+Setting up libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Setting up python3-asgiref (3.7.2-1) ...
+Setting up python3-pyinotify (0.9.6-2ubuntu1) ...
+Setting up python3-werkzeug (3.0.1-3ubuntu0.2) ...
+Setting up python3-flask (3.0.2-1ubuntu1) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-6-96:~$ export FLASK_APP=app.py
+flask run --host=0.0.0.0 --port=9000
+Usage: flask run [OPTIONS]
+Try 'flask run --help' for help.
+
+Error: Could not import 'app'.
+ubuntu@ip-172-31-6-96:~$ export FLASK_APP=app.py
+flask run --host=0.0.0.0 --port=9000
+Usage: flask run [OPTIONS]
+Try 'flask run --help' for help.
+
+Error: Could not import 'app'.
+ubuntu@ip-172-31-6-96:~$ nslookup guvi.com
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   guvi.com
+Address: 104.21.79.166
+Name:   guvi.com
+Address: 172.67.146.154
+Name:   guvi.com
+Address: 2606:4700:3037::ac43:929a
+Name:   guvi.com
+Address: 2606:4700:3031::6815:4fa6
+
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
+ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (172.67.146.154) port 9000 (tcp) failed: Connection timed out
+nc: connect to guvi.com (2606:4700:3037::ac43:929a) port 9000 (tcp) failed: Network is unreachable
+nc: connect to guvi.com (2606:4700:3031::6815:4fa6) port 9000 (tcp) failed: Network is unreachable
+ubuntu@ip-172-31-6-96:~$ ubuntu@ip-172-31-6-96:~$ nc -zv guvi.com 9000
+ubuntu@ip-172-31-6-96:~$: command not found
+ubuntu@ip-172-31-6-96:~$ nc: connect to guvi.com (104.21.79.166) port 9000 (tcp) failed: Connection timed out
